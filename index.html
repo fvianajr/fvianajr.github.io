@@ -59,11 +59,15 @@
             padding: 40px 20px;
         }
         section {
+            display: none;
             background-color: #2C2C2C;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        section.active {
+            display: block;
         }
         section h2, section h3 {
             color: #FFD700;
@@ -98,12 +102,12 @@
         <p>Bem-vindo ao meu portfólio!</p>
     </header>
     <nav>
-        <a href="#sobre-mim">Sobre Mim</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#projetos">Projetos</a>
+        <a href="#" onclick="showSection('sobre-mim')">Sobre Mim</a>
+        <a href="#" onclick="showSection('portfolio')">Portfólio</a>
+        <a href="#" onclick="showSection('projetos')">Projetos</a>
     </nav>
     <main>
-        <section id="sobre-mim">
+        <section id="sobre-mim" class="active">
             <h2>Sobre Mim</h2>
             <p>👨‍💻 <strong>Viana Junior</strong></p>
             <p>🌍 <strong>Localização:</strong> Fortaleza, Ceará</p>
@@ -155,5 +159,19 @@
     <footer>
         <p>&copy; 2024 Viana Junior</p>
     </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Exibe a seção clicada
+            const sectionToShow = document.getElementById(sectionId);
+            sectionToShow.classList.add('active');
+        }
+    </script>
 </body>
 </html>
