@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #1a1a2e;
+            color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,7 +16,7 @@
             align-items: center;
         }
         header {
-            background-color: #1a1a2e;
+            background-color: #6a0dad;
             color: #fff;
             width: 100%;
             text-align: center;
@@ -77,7 +77,7 @@
             opacity: 1;
         }
         section h2, section h3 {
-            color: #1a1a2e;
+            color: #6a0dad;
         }
         section p {
             font-size: 1rem;
@@ -85,7 +85,7 @@
             color: #555;
         }
         footer {
-            background-color: #1a1a2e;
+            background-color: #6a0dad;
             color: #fff;
             padding: 20px 0;
             width: 100%;
@@ -120,19 +120,35 @@
             color: #fff;
         }
         .cta-button {
-            background-color: #f5b700;
-            color: #1a1a2e;
+            background-color: #6a0dad;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 1rem;
             text-decoration: none;
             display: inline-block;
             font-weight: 600;
+            margin: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #1a1a2e;
-            color: #fff;
+            background-color: #f5b700;
+            color: #1a1a2e;
+        }
+        .cta-button i {
+            margin-right: 8px;
+        }
+        .cta-button-wpp {
+            background-color: #25D366;
+        }
+        .cta-button-wpp:hover {
+            background-color: #128C7E;
+        }
+        .cta-button-linkedin {
+            background-color: #0A66C2;
+        }
+        .cta-button-linkedin:hover {
+            background-color: #004182;
         }
     </style>
 </head>
@@ -143,7 +159,6 @@
     </header>
     <nav>
         <a href="#" onclick="showSection('sobre-mim')">Sobre Mim</a>
-        <a href="#" onclick="showSection('portfolio')">Portfólio</a>
         <a href="#" onclick="showSection('projetos')">Projetos</a>
     </nav>
     <main>
@@ -153,6 +168,7 @@
             <p>🌍 <strong>Localização:</strong> Fortaleza, Ceará</p>
             <p>📧 <strong>Contato:</strong> <a href="mailto:fvianajrce.jobs@gmail.com" style="color: #f5b700;">fvianajrce.jobs@gmail.com</a></p>
             <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vianajr/" target="_blank" style="color: #f5b700;">linkedin.com/in/vianajr</a></p>
+            <h3>Sobre Mim</h3>
             <p>
                 Sou um profissional com mais de 6 anos de experiência em <strong>Customer Service</strong> e <strong>Customer Experience (CX)</strong>.
                 Minha paixão está em criar e implementar soluções que melhorem a experiência do cliente e otimizem processos
@@ -170,15 +186,11 @@
                     Mapeamento da jornada do cliente, criação e otimização de dashboards interativos, auditoria de vendas e monitoramento de qualidade
                 </li>
             </ul>
-            <p><a href="mailto:fvianajrce.jobs@gmail.com" class="cta-button">Entrar em contato</a></p>
-        </section>
-        <section id="portfolio">
-            <h2>Meu Portfólio</h2>
-            <h3>📊 Portfólio de Análise de Dados</h3>
-            <p>Bem-vindo(a) ao meu repositório de portfólio! Aqui você encontrará projetos que demonstram minha experiência e criatividade na área de <strong>análise de dados</strong>.</p>
-            <h4>🧐 Sobre o Repositório</h4>
-            <p>Este portfólio é um espaço para apresentar projetos de análise de dados que demonstram minha experiência em transformar informações em insights relevantes. Ele reúne dashboards interativos e análises que cobrem diferentes áreas, utilizando ferramentas e abordagens estratégicas.</p>
-            <p>💡 <strong>Objetivo:</strong> Mostrar como aplico técnicas de análise de dados para gerar valor e apoiar decisões informadas, com foco em storytelling visual e resultados práticos.</p>
+            <div>
+                <a href="mailto:fvianajrce.jobs@gmail.com" class="cta-button"><i class="fas fa-envelope"></i>Contato</a>
+                <a href="https://www.linkedin.com/in/vianajr/" class="cta-button cta-button-linkedin" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://wa.me/5511955555555" class="cta-button cta-button-wpp" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+            </div>
         </section>
         <section id="projetos">
             <h2>Meus Projetos</h2>
@@ -213,5 +225,8 @@
             sectionToShow.classList.add('active');
         }
     </script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
