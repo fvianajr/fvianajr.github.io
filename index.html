@@ -184,6 +184,14 @@
   }
   .recruiter-note strong{color:var(--ink);}
   .case-intro p{margin:0 0 16px; color:var(--ink-soft);}
+  .stack-line{
+    margin:8px 0 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--teal-deep);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
   .case-kpis{
     display:grid; grid-template-columns:1fr; gap:12px;
   }
@@ -332,6 +340,7 @@
         <span class="tag">Power BI</span>
         <span class="tag">Looker Studio</span>
         <span class="tag">BigQuery</span>
+        <span class="tag">PostgreSQL</span>
         <span class="tag">Excel Avançado</span>
       </div>
     </div>
@@ -340,6 +349,7 @@
       <div class="tags">
         <span class="tag">Python</span>
         <span class="tag">SQL</span>
+        <span class="tag">Cloud Run</span>
         <span class="tag">VBA</span>
         <span class="tag">Google Apps Script</span>
       </div>
@@ -417,13 +427,15 @@
   <div class="section-head"><span class="section-num">03</span><h2>Projetos</h2></div>
   <div class="projects">
     <div class="project-card featured">
-      <span class="project-tag">Python · SQLite · APIs · BI</span>
+      <span class="project-tag">Python · SQL · APIs · BigQuery · BI</span>
       <h3>Automação Operacional de Faturamento e Cobranças - Ligy</h3>
-      <p>Case real apresentado com dados demonstrativos: workspace que integra Gmail, Pipefy, GDASH e SQLite para organizar faturas, calcular vencimentos, evitar duplicidades e registrar histórico operacional.</p>
+      <p>Case real apresentado com dados demonstrativos: projeto que integra Gmail, APIs operacionais, SQL e BigQuery para organizar faturas, calcular vencimentos, evitar duplicidades e registrar histórico operacional.</p>
       <ul class="project-list">
-        <li>Preview antes de ações reais de cobrança</li>
-        <li>Histórico de auditoria para envios, falhas e correções</li>
-        <li>Exportação de bases para dashboards e acompanhamento gerencial</li>
+        <li>Extração de faturas via Gmail e download automatizado de anexos</li>
+        <li>Automação Enel para baixar faturas pendentes e validar arquivos</li>
+        <li>Extração de tabelas por API e organização em bases consultáveis</li>
+        <li>Envio automatizado via Gmail, com uso em rotina no Cloud Run</li>
+        <li>SQL em SQLite, PostgreSQL e BigQuery para consultas e dashboards</li>
       </ul>
       <a class="project-link" href="#case-ligy">Ver case completo</a>
     </div>
@@ -455,63 +467,68 @@
 </section>
 
 <section id="case-ligy">
-  <div class="section-head"><span class="section-num">04</span><h2>Case Ligy</h2></div>
-  <p class="recruiter-note"><strong>Resumo para recrutamento:</strong> projeto de automação operacional criado para reduzir conferências manuais, aumentar a segurança do faturamento e dar rastreabilidade ao processo de cobrança.</p>
+  <div class="section-head"><span class="section-num">04</span><h2>Projeto Ligy</h2></div>
+  <p class="recruiter-note"><strong>Resumo para recrutamento:</strong> projeto de automação operacional criado para reduzir conferências manuais, baixar e organizar faturas, automatizar envios, aumentar a segurança do faturamento e dar rastreabilidade ao processo de cobrança.</p>
 
   <div class="case-intro">
     <div>
-      <p><strong>Problema:</strong> a operação precisava lidar com faturas, clientes e cobranças em ferramentas diferentes. Isso tornava o processo lento, difícil de auditar e mais sujeito a vencimentos incorretos ou duplicados.</p>
-      <p><strong>Minha entrega:</strong> criei um workspace em Python e SQLite para centralizar os dados, automatizar validações, gerar previews antes da execução e registrar tudo que foi enviado, corrigido ou pulado.</p>
+      <p><strong>Problema:</strong> a operação precisava lidar com faturas, clientes, cobranças e indicadores em ferramentas diferentes. Isso tornava o processo lento, difícil de auditar e mais sujeito a anexos perdidos, vencimentos incorretos ou cobranças duplicadas.</p>
+      <p><strong>Minha entrega:</strong> criei automações em Python para baixar faturas via Gmail e portal Enel, consultar tabelas por API, organizar os dados com SQL, automatizar envios por Gmail e alimentar bases analíticas em BigQuery e dashboards.</p>
+      <p class="stack-line">Python · SQL · Gmail API · APIs REST · SQLite · PostgreSQL · BigQuery · Cloud Run · BI</p>
     </div>
     <div class="case-kpis">
       <div class="metric">
-        <strong>4 fontes</strong>
-        <span>Gmail, Pipefy, GDASH e SQLite</span>
+        <strong>Faturas</strong>
+        <span>Gmail e portal Enel</span>
       </div>
       <div class="metric">
-        <strong>preview</strong>
-        <span>conferência antes da execução real</span>
+        <strong>APIs</strong>
+        <span>extração de tabelas operacionais</span>
       </div>
       <div class="metric">
-        <strong>auditoria</strong>
-        <span>histórico de envios, falhas e ajustes</span>
+        <strong>Cloud</strong>
+        <span>Cloud Run, BigQuery e BI</span>
       </div>
     </div>
   </div>
 
   <div class="case-flow">
-    <div class="flow-step">Reúne dados operacionais em uma base local organizada.</div>
-    <div class="flow-step">Identifica faturas elegíveis e aplica regras de cobrança.</div>
-    <div class="flow-step">Mostra uma prévia antes de qualquer ação real.</div>
-    <div class="flow-step">Registra histórico e alimenta dashboards gerenciais.</div>
+    <div class="flow-step">Captura faturas por Gmail e baixa pendências no portal Enel.</div>
+    <div class="flow-step">Consulta tabelas por API e cruza os dados com SQL.</div>
+    <div class="flow-step">Executa regras de cobrança, previews e envios automatizados.</div>
+    <div class="flow-step">Publica dados no BigQuery e alimenta dashboards gerenciais.</div>
   </div>
 
   <div class="case-grid">
     <div class="case-topic">
-      <h3>Automação de cobranças</h3>
-      <p>Rotina para listar, gerar e reprocessar cobranças com bloqueios de segurança, reprocessamento de falhas e controle de itens já enviados.</p>
+      <h3>Faturas via Gmail</h3>
+      <p>Automação para localizar e processar faturas recebidas por e-mail, registrar status e manter rastreabilidade dos anexos sem expor dados sensíveis.</p>
     </div>
     <div class="case-topic">
-      <h3>Regra de vencimento</h3>
-      <p>Nova lógica para clientes com vencimento fixo, evitando duas cobranças vencendo no mesmo mês e usando a data real de importação da fatura.</p>
+      <h3>Automação Enel</h3>
+      <p>Robô para baixar faturas pendentes no portal da distribuidora, controlar fila de execução, validar PDFs e evitar reprocessamento de itens já resolvidos.</p>
     </div>
     <div class="case-topic">
-      <h3>Dashboards e gestão</h3>
-      <p>Exportação de bases consolidadas para acompanhar faturamento, arrecadação, inadimplência, faturas pendentes e histórico operacional.</p>
+      <h3>APIs e envios</h3>
+      <p>Extração de tabelas operacionais via API e automação de envio via Gmail, com histórico, controle de falhas e uso em rotina no Cloud Run.</p>
+    </div>
+    <div class="case-topic">
+      <h3>SQL e analytics</h3>
+      <p>Consultas e modelagem em SQLite, PostgreSQL e BigQuery para organizar dados, apoiar auditorias e alimentar dashboards de faturamento e gestão.</p>
     </div>
   </div>
 
   <div class="case-visual-grid" aria-label="Materiais demonstrativos do case Ligy">
     <figure class="case-visual">
-      <img src="../demo/notion_uploads/view-vencimentos-duplicados.svg" alt="Tabela demonstrativa de vencimentos duplicados">
+      <img src="assets/view-vencimentos-duplicados.svg" alt="Tabela demonstrativa de vencimentos duplicados">
       <figcaption>Diagnóstico de duplicidades</figcaption>
     </figure>
     <figure class="case-visual">
-      <img src="../demo/notion_uploads/historico-correcoes-vencimento.svg" alt="Histórico demonstrativo de correções de vencimento">
+      <img src="assets/historico-correcoes-vencimento.svg" alt="Histórico demonstrativo de correções de vencimento">
       <figcaption>Auditoria de correções</figcaption>
     </figure>
     <figure class="case-visual">
-      <img src="../demo/notion_uploads/email-vencimento-atualizado.svg" alt="E-mail demonstrativo de vencimento atualizado">
+      <img src="assets/email-vencimento-atualizado.svg" alt="E-mail demonstrativo de vencimento atualizado">
       <figcaption>Comunicação ao cliente</figcaption>
     </figure>
   </div>
