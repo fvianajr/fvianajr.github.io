@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francisco Viana Jr. — Operations & Data Analyst</title>
+<title>Francisco Viana Jr. - Operations & Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -31,7 +31,6 @@
   a{color:inherit;}
   ::selection{background:var(--teal);color:#fff;}
 
-  /* ---------- NAV ---------- */
   header.top{
     position:sticky; top:0; z-index:50;
     background:rgba(250,250,248,0.92);
@@ -48,7 +47,7 @@
     letter-spacing:0.02em;
   }
   .brand span{color:var(--teal);}
-  nav.links{display:flex; gap:32px;}
+  nav.links{display:flex; gap:24px;}
   nav.links a{
     font-size:0.85rem; font-weight:600; text-transform:uppercase;
     letter-spacing:0.08em; text-decoration:none; color:var(--ink-soft);
@@ -57,7 +56,6 @@
   }
   nav.links a:hover, nav.links a.active{color:var(--ink); border-color:var(--teal);}
 
-  /* ---------- HERO ---------- */
   .hero{
     max-width:1080px; margin:0 auto;
     padding:88px 28px 64px;
@@ -104,13 +102,11 @@
   .btn-outline{border:1px solid var(--line); color:var(--ink);}
   .btn-outline:hover{border-color:var(--teal); color:var(--teal-deep);}
 
-  /* ---------- SECTIONS ---------- */
   section{max-width:1080px; margin:0 auto; padding:64px 28px; border-top:1px solid var(--line);}
   .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:40px;}
   .section-num{font-family:'IBM Plex Mono',monospace; color:var(--teal); font-size:0.85rem;}
   h2{font-family:'Fraunces',serif; font-weight:600; font-size:1.9rem; margin:0;}
 
-  /* ---------- SKILLS ---------- */
   .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
   .skill-group h4{
     font-family:'IBM Plex Mono',monospace; font-size:0.75rem; text-transform:uppercase;
@@ -122,7 +118,6 @@
     border:1px solid var(--line); border-radius:20px; color:var(--ink);
   }
 
-  /* ---------- TIMELINE (pipeline) ---------- */
   .pipeline{position:relative; padding-left:32px;}
   .pipeline::before{
     content:""; position:absolute; left:5px; top:6px; bottom:6px;
@@ -155,13 +150,13 @@
   }
   .earlier span{font-family:'IBM Plex Mono',monospace; color:var(--ink);}
 
-  /* ---------- PORTFOLIO ---------- */
   .projects{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   .project-card{
     background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:28px; transition:.25s; display:flex; flex-direction:column; gap:14px;
   }
   .project-card:hover{border-color:var(--teal); transform:translateY(-2px); box-shadow:0 12px 24px rgba(20,23,31,0.06);}
+  .project-card.featured{grid-column:1 / -1;}
   .project-tag{
     font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--teal);
     text-transform:uppercase; letter-spacing:0.08em;
@@ -170,14 +165,98 @@
   .project-card p{color:var(--ink-soft); font-size:0.9rem; margin:0;}
   .project-list{list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--ink-soft);}
   .project-list li{padding:4px 0; padding-left:16px; position:relative;}
-  .project-list li::before{content:"—"; position:absolute; left:0; color:var(--teal);}
+  .project-list li::before{content:"-"; position:absolute; left:0; color:var(--teal);}
   .project-link{
     margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:0.8rem;
     color:var(--teal-deep); text-decoration:none; font-weight:500;
   }
   .project-link:hover{color:var(--teal);}
 
-  /* ---------- CONTACT / FOOTER ---------- */
+  .case-intro{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:36px; align-items:start;
+    margin-bottom:36px;
+  }
+  .recruiter-note{
+    max-width:760px;
+    margin:-18px 0 34px;
+    color:var(--ink-soft);
+    font-size:1rem;
+  }
+  .recruiter-note strong{color:var(--ink);}
+  .case-intro p{margin:0 0 16px; color:var(--ink-soft);}
+  .case-kpis{
+    display:grid; grid-template-columns:1fr; gap:12px;
+  }
+  .metric{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px;
+  }
+  .metric strong{
+    display:block; font-family:'Fraunces',serif; font-size:1.8rem; line-height:1;
+    color:var(--teal-deep); margin-bottom:6px;
+  }
+  .metric span{
+    font-family:'IBM Plex Mono',monospace; font-size:0.74rem; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--ink-soft);
+  }
+  .case-flow{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:28px 0 34px;
+    counter-reset:flow;
+  }
+  .flow-step{
+    border-top:2px solid var(--teal);
+    padding-top:14px;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+  .flow-step::before{
+    counter-increment:flow;
+    content:"0" counter(flow);
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--teal-deep);
+    font-size:0.78rem;
+    margin-bottom:6px;
+  }
+  .case-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:20px;
+  }
+  .case-topic h3{
+    font-family:'Fraunces',serif; font-size:1.1rem; margin:0 0 8px;
+  }
+  .case-topic p{
+    color:var(--ink-soft); font-size:0.9rem; margin:0;
+  }
+  .case-visual-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px;
+  }
+  .case-visual{
+    margin:0;
+    border:1px solid var(--line);
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .case-visual img{
+    display:block; width:100%; height:190px; object-fit:cover; object-position:left top;
+    background:var(--bg-alt);
+  }
+  .case-visual figcaption{
+    padding:10px 12px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .privacy-note{
+    margin-top:28px;
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--gold);
+    padding-left:14px;
+  }
+
   .contact-block{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;
   }
@@ -188,11 +267,21 @@
     border-top:1px solid var(--line); font-family:'IBM Plex Mono',monospace;
   }
 
+  @media(max-width:900px){
+    nav.links{gap:16px;}
+    .case-flow{grid-template-columns:1fr 1fr;}
+    .case-visual-grid{grid-template-columns:1fr;}
+  }
   @media(max-width:760px){
+    .nav-inner{align-items:flex-start; gap:14px; flex-direction:column;}
+    nav.links{flex-wrap:wrap;}
     .hero{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:1fr;}
     .projects{grid-template-columns:1fr;}
-    nav.links{gap:18px;}
+    .project-card.featured{grid-column:auto;}
+    .case-intro{grid-template-columns:1fr;}
+    .case-grid{grid-template-columns:1fr;}
+    .case-flow{grid-template-columns:1fr;}
     .contact-block{flex-direction:column; align-items:flex-start;}
   }
   @media (prefers-reduced-motion: reduce){
@@ -210,6 +299,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#experiencia">Experiência</a>
       <a href="#portfolio">Portfólio</a>
+      <a href="#case-ligy">Ligy</a>
       <a href="#contato">Contato</a>
     </nav>
   </div>
@@ -219,7 +309,7 @@
   <div>
     <div class="eyebrow">Operations & Data Analyst</div>
     <h1 class="hero-title">Transformo processos manuais em rotinas confiáveis e mensuráveis.</h1>
-    <p class="lead">Mais de 8 anos em operações, atendimento e análise de processos — hoje aplicando Python, SQL e BI para automatizar rotinas e sustentar decisões com dados. Estudante de Engenharia Mecatrônica (IFCE).</p>
+    <p class="lead">Mais de 8 anos em operações, atendimento e análise de processos. Hoje aplico Python, SQL e BI para automatizar rotinas, estruturar dados e sustentar decisões com clareza.</p>
   </div>
   <div class="hero-stat">
     <div class="num">~2s</div>
@@ -229,8 +319,8 @@
 
 <div class="hero-actions">
   <a href="mailto:vianafcj.jobs@gmail.com" class="btn btn-primary">Enviar e-mail</a>
-  <a href="https://www.linkedin.com/in/vianajr/" target="_blank" class="btn btn-outline">LinkedIn</a>
-  <a href="https://wa.me/5585996384966" target="_blank" class="btn btn-outline">WhatsApp</a>
+  <a href="https://www.linkedin.com/in/vianajr/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+  <a href="https://wa.me/5585996384966" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
 </div>
 
 <section>
@@ -271,19 +361,19 @@
   <div class="pipeline">
 
     <div class="job current">
-      <div class="job-meta">Set. 2025 — Atual</div>
+      <div class="job-meta">Set. 2025 - Atual</div>
       <h3>Analista de Faturamento e Automações</h3>
       <div class="company">Ligy</div>
       <ul>
         <li>Desenvolvimento de dashboards de gestão para indicadores operacionais</li>
         <li>Automação de rotinas internas com Python</li>
-        <li>Estruturação de processos em Sheets e Excel</li>
+        <li>Estruturação de processos em Sheets, Excel e SQLite</li>
       </ul>
-      <div class="result"><strong>Resultado:</strong> automação de manipulação de dados e envio de e-mails via Python, reduzindo tempo de execução de dezenas de minutos para ~2 segundos. Base estruturada em BigQuery para centralizar consultas.</div>
+      <div class="result"><strong>Resultado:</strong> automação de manipulação de dados, integração de fontes operacionais e envio controlado de comunicações, reduzindo rotinas manuais e aumentando a rastreabilidade.</div>
     </div>
 
     <div class="job">
-      <div class="job-meta">Abr. 2025 — Jun. 2025 · Temporário</div>
+      <div class="job-meta">Abr. 2025 - Jun. 2025 · Temporário</div>
       <h3>Analista de Customer Service I</h3>
       <div class="company">M. Dias Branco</div>
       <ul>
@@ -295,7 +385,7 @@
     </div>
 
     <div class="job">
-      <div class="job-meta">Ago. 2024 — Abr. 2025</div>
+      <div class="job-meta">Ago. 2024 - Abr. 2025</div>
       <h3>Analista Sênior de Customer Experience</h3>
       <div class="company">Carrefour</div>
       <ul>
@@ -307,18 +397,18 @@
     </div>
 
     <div class="job">
-      <div class="job-meta">Abr. 2023 — Ago. 2024</div>
-      <h3>Advisor — Customer Service</h3>
+      <div class="job-meta">Abr. 2023 - Ago. 2024</div>
+      <h3>Advisor - Customer Service</h3>
       <div class="company">Concentrix</div>
       <ul>
         <li>Atendimento ao cliente e suporte operacional diário</li>
         <li>Treinamento de novos atendentes</li>
       </ul>
-      <div class="result"><strong>Resultado:</strong> dashboards interativos para NPS, produtividade e aderência a scripts — identificando gaps de performance entre atendentes.</div>
+      <div class="result"><strong>Resultado:</strong> dashboards interativos para NPS, produtividade e aderência a scripts, identificando gaps de performance entre atendentes.</div>
     </div>
 
     <div class="earlier">
-      <span>2011—2016</span> Operador / Backoffice CS — Contax &nbsp;·&nbsp; <span>2021—2023</span> Merchandising — Riachuelo Iguatemi
+      <span>2011-2016</span> Operador / Backoffice CS - Contax &nbsp;·&nbsp; <span>2021-2023</span> Merchandising - Riachuelo Iguatemi
     </div>
   </div>
 </section>
@@ -326,29 +416,107 @@
 <section id="portfolio">
   <div class="section-head"><span class="section-num">03</span><h2>Projetos</h2></div>
   <div class="projects">
+    <div class="project-card featured">
+      <span class="project-tag">Python · SQLite · APIs · BI</span>
+      <h3>Automação Operacional de Faturamento e Cobranças - Ligy</h3>
+      <p>Case real apresentado com dados demonstrativos: workspace que integra Gmail, Pipefy, GDASH e SQLite para organizar faturas, calcular vencimentos, evitar duplicidades e registrar histórico operacional.</p>
+      <ul class="project-list">
+        <li>Preview antes de ações reais de cobrança</li>
+        <li>Histórico de auditoria para envios, falhas e correções</li>
+        <li>Exportação de bases para dashboards e acompanhamento gerencial</li>
+      </ul>
+      <a class="project-link" href="#case-ligy">Ver case completo</a>
+    </div>
+
     <div class="project-card">
       <span class="project-tag">Looker Studio</span>
-      <h3>Análise de NPS — Call Center</h3>
+      <h3>Análise de NPS - Call Center</h3>
       <p>Dashboard para entender a experiência do cliente e identificar áreas de melhoria.</p>
       <ul class="project-list">
         <li>Acompanhamento consolidado e diário do NPS</li>
         <li>Desempenho por fila de atendimento e TMA</li>
         <li>Avaliação individual de talentos</li>
       </ul>
-      <a class="project-link" href="https://lookerstudio.google.com/u/0/reporting/310d6fc8-cf7e-473a-a3f8-23cc0ca6d890/page/p_15p35jn3hd?s=r1Bkx8GyH_Y" target="_blank">Ver dashboard →</a>
+      <a class="project-link" href="https://lookerstudio.google.com/u/0/reporting/310d6fc8-cf7e-473a-a3f8-23cc0ca6d890/page/p_15p35jn3hd?s=r1Bkx8GyH_Y" target="_blank" rel="noopener">Ver dashboard</a>
     </div>
+
     <div class="project-card">
       <span class="project-tag">Power BI</span>
-      <h3>Dashboard Financeiro — Hotelaria</h3>
+      <h3>Dashboard Financeiro - Hotelaria</h3>
       <p>Indicadores financeiros de um hotel para compreensão de desempenho e oportunidades de otimização.</p>
       <ul class="project-list">
         <li>Receitas, despesas, lucro e margem</li>
         <li>Visualização sazonal por ano/estação</li>
         <li>Gráficos interativos para decisão</li>
       </ul>
-      <a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiZjc3NTJmOTMtMDhhOC00NzdiLTkxZDctNmQwMmQ1MGI2NzVmIiwidCI6IjI1ODQ2MGJkLTAyN2UtNDFiMC1hMTk1LTZkMGE1OWE2ZWQ4YSJ9&pageName=3fa0595796920d5f8d43" target="_blank">Ver dashboard →</a>
+      <a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiZjc3NTJmOTMtMDhhOC00NzdiLTkxZDctNmQwMmQ1MGI2NzVmIiwidCI6IjI1ODQ2MGJkLTAyN2UtNDFiMC1hMTk1LTZkMGE1OWE2ZWQ4YSJ9&pageName=3fa0595796920d5f8d43" target="_blank" rel="noopener">Ver dashboard</a>
     </div>
   </div>
+</section>
+
+<section id="case-ligy">
+  <div class="section-head"><span class="section-num">04</span><h2>Case Ligy</h2></div>
+  <p class="recruiter-note"><strong>Resumo para recrutamento:</strong> projeto de automação operacional criado para reduzir conferências manuais, aumentar a segurança do faturamento e dar rastreabilidade ao processo de cobrança.</p>
+
+  <div class="case-intro">
+    <div>
+      <p><strong>Problema:</strong> a operação precisava lidar com faturas, clientes e cobranças em ferramentas diferentes. Isso tornava o processo lento, difícil de auditar e mais sujeito a vencimentos incorretos ou duplicados.</p>
+      <p><strong>Minha entrega:</strong> criei um workspace em Python e SQLite para centralizar os dados, automatizar validações, gerar previews antes da execução e registrar tudo que foi enviado, corrigido ou pulado.</p>
+    </div>
+    <div class="case-kpis">
+      <div class="metric">
+        <strong>4 fontes</strong>
+        <span>Gmail, Pipefy, GDASH e SQLite</span>
+      </div>
+      <div class="metric">
+        <strong>preview</strong>
+        <span>conferência antes da execução real</span>
+      </div>
+      <div class="metric">
+        <strong>auditoria</strong>
+        <span>histórico de envios, falhas e ajustes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-flow">
+    <div class="flow-step">Reúne dados operacionais em uma base local organizada.</div>
+    <div class="flow-step">Identifica faturas elegíveis e aplica regras de cobrança.</div>
+    <div class="flow-step">Mostra uma prévia antes de qualquer ação real.</div>
+    <div class="flow-step">Registra histórico e alimenta dashboards gerenciais.</div>
+  </div>
+
+  <div class="case-grid">
+    <div class="case-topic">
+      <h3>Automação de cobranças</h3>
+      <p>Rotina para listar, gerar e reprocessar cobranças com bloqueios de segurança, reprocessamento de falhas e controle de itens já enviados.</p>
+    </div>
+    <div class="case-topic">
+      <h3>Regra de vencimento</h3>
+      <p>Nova lógica para clientes com vencimento fixo, evitando duas cobranças vencendo no mesmo mês e usando a data real de importação da fatura.</p>
+    </div>
+    <div class="case-topic">
+      <h3>Dashboards e gestão</h3>
+      <p>Exportação de bases consolidadas para acompanhar faturamento, arrecadação, inadimplência, faturas pendentes e histórico operacional.</p>
+    </div>
+  </div>
+
+  <div class="case-visual-grid" aria-label="Materiais demonstrativos do case Ligy">
+    <figure class="case-visual">
+      <img src="../demo/notion_uploads/view-vencimentos-duplicados.svg" alt="Tabela demonstrativa de vencimentos duplicados">
+      <figcaption>Diagnóstico de duplicidades</figcaption>
+    </figure>
+    <figure class="case-visual">
+      <img src="../demo/notion_uploads/historico-correcoes-vencimento.svg" alt="Histórico demonstrativo de correções de vencimento">
+      <figcaption>Auditoria de correções</figcaption>
+    </figure>
+    <figure class="case-visual">
+      <img src="../demo/notion_uploads/email-vencimento-atualizado.svg" alt="E-mail demonstrativo de vencimento atualizado">
+      <figcaption>Comunicação ao cliente</figcaption>
+    </figure>
+  </div>
+
+  <p class="privacy-note">Todos os materiais visuais desta seção usam dados fictícios ou demonstrativos. O portfólio não expõe nomes reais de clientes, documentos, UCs, e-mails, tokens, PDFs, bancos oficiais ou credenciais.</p>
 </section>
 
 <section id="contato">
@@ -362,7 +530,7 @@
 </section>
 
 <footer>
-  © 2026 Francisco Viana Jr. · Fortaleza, CE
+  &copy; 2026 Francisco Viana Jr. · Fortaleza, CE
 </footer>
 
 <script>
